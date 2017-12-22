@@ -1,0 +1,17 @@
+@import "font-bzar";
+
+
+.ir-font {
+  font-family: BZar,'BZar', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+.en-font {
+  font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+  font-size: 20px;
+}
+
+body {
+  @extend .ir-font;
+  text-align: right;
+}

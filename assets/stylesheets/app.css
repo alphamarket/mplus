@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'BZar';
+  src: url("/assets/fonts/BZar.eot") format("eot"), url("/assets/fonts/BZar.ttf") format("truetype"), url("/assets/fonts/BZar.woff") format("woff"); }
+.ir-font, body {
+  font-family: BZar,'BZar', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px; }
+
+.en-font {
+  font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+  font-size: 20px; }
+
+body {
+  text-align: right; }
+
+/*# sourceMappingURL=app.css.map */

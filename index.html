@@ -1,0 +1,139 @@
+<!doctype html>
+<html dir="rtl" lang="fa-IR">
+  <head>
+    <title>مبل‌پلاس | فروشگاه اینترنتی</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- font-awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/stylesheets/app.css" xintegrity="sha384-179e201cb3078f681d2fd76042c2bf6c3e9a08afa721554945f75b73edb71d7b33a68cc4d1259c7461d11be28e01bf88" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" id="content">
+      <div id="init-splash" class="text-center" style="position: relative; top: 40px; font-weight: bold;">
+        <span class="fa fa-spinner fa-spin"></span> در حال بارگذاری....
+      </div>
+    </div>
+
+    <template class="hidden" id="item-templ">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="card" style="xwidth: 20rem; margin-bottom: 35px;">
+            <img class="card-img-top" src="..." style="height: 120px" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex d-flex-row  font-weight-bold">
+                <span class="fa fa-shopping-cart" style="margin-left: 10px;"></span>
+                <span style="margin-left: 10px;">طرح: </span>
+                <p class="card-title" style="font-size: 1.3em; position: relative; top: -3px"></p>
+              </div>
+              <p class="card-text"></p>
+              <span class="badge badge-success card-price"></span>
+              <a href="#" class="btn btn-primary float-left font-weight-bold">جزئیات بیشتر</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <style>
+      #content-template content { display: none; }
+    </style>
+
+    <div id="content-template">
+      <content id="01">
+        <ul style="font-size: 1.1em">
+          <li>مبل استقبال مونتاژ داخل</li>
+          <li>تخت خواب شو هستن</li>
+          <li>با پارچه نانو قابل شستشوی</li>
+          <li>بدنه فلزی و با استقامت بالا</li>
+          <li>دارای باکس ساخته شده از ام دی اف که داخلش وسایل می‌توانید بگذارید.</li>
+          <li>با ۴ تا کوسن رایگان</li>
+        </ul>
+      </content>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        $("a[href='#']").click(function(e) { e.preventDefault(); });
+        var items = [
+          {
+            dir: '/assets/images/01',
+            numberOfImages: 3,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: 'گل سرخ',
+            content: '#content-template content#01'
+          },
+          {
+            dir: '/assets/images/02',
+            numberOfImages: 1,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: '',
+            content: '#content-template content#02'
+          },
+          {
+            dir: '/assets/images/03',
+            numberOfImages: 3,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: '',
+            content: '#content-template content#03'
+          },
+          {
+            dir: '/assets/images/04',
+            numberOfImages: 1,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: '',
+            content: '#content-template content#04'
+          },
+          {
+            dir: '/assets/images/05',
+            numberOfImages: 6,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: '',
+            content: '#content-template content#05'
+          },
+          {
+            dir: '/assets/images/06',
+            numberOfImages: 1,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: '',
+            content: '#content-template content#06'
+          },
+          {
+            dir: '/assets/images/07',
+            numberOfImages: 1,
+            header: '1.jpg',
+            price: "2,800,000",
+            title: '',
+            content: '#content-template content#07'
+          },
+        ];
+        $("body #content").html("<div class='row'>");
+        items.forEach(function(i) {
+          $templ = $($("template#item-templ").clone().html());
+          console.log([$(i.content).html(), i.content])
+          $templ.find("img[src]").attr("src", i.dir + "/" + i.header);
+          $templ.find('.card-title').html(i.title)
+          $templ.find('.card-text').html($(i.content).html())
+          $templ.find('.card-price').html(i.price + " تومان")
+          $("body #content .row:first").append($templ.html());
+        });
+      });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
