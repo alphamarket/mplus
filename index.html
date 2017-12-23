@@ -2,6 +2,8 @@
 <html dir="rtl" lang="fa-IR">
   <head>
     <title>مبل‌پلاس | فروشگاه اینترنتی</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,11 +17,38 @@
     <link rel="stylesheet" href="/assets/stylesheets/app.css" xintegrity="sha384-179e201cb3078f681d2fd76042c2bf6c3e9a08afa721554945f75b73edb71d7b33a68cc4d1259c7461d11be28e01bf88" crossorigin="anonymous">
   </head>
   <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding-top: 0; border-bottom: 1px solid #e7e7e7">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">
+          <img src="/assets/images/logo.png" style="margin-left: 10px;" height="45" />
+          مبل‌پلاس
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbars">
+          <ul class="navbar-nav" style="margin-top: 12px;">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">خانه <span class="sr-only">(الان)</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="container" id="content" style="margin-top: 20px;">
       <div id="init-splash" class="text-center" style="position: relative; top: 40px; font-weight: bold;">
         <span class="fa fa-spinner fa-spin"></span> در حال بارگذاری....
       </div>
     </div>
+
+    <footer class="footer bg-light hidden">
+      <div class="container">
+        <span class="far fa-hand-point-left" style="position: relative; top: 3px;"></span>
+        در صورت داشتن هرگونه پرسش یا سفارشی با شماره‌ تلفن ۰۹۱۲۰۵۳۵۳۴۸ تماس حاصل فرمایید.
+      </div>
+    </footer>
 
     <template id="item-templ">
       <div class="row">
@@ -63,21 +92,46 @@
         </div>
       </div>
     </template>
-
-    <style>
-      template { display: none }
-      #content-template content { display: none; }
-    </style>
-
+    <!-- mataleb tozihate har mobl -->
     <div id="content-template">
       <content id="01">
-        <ul style="font-size: 1.1em">
+        <ul class="contentize">
           <li>مبل استقبال مونتاژ داخل</li>
           <li>تخت خواب شو هستن</li>
           <li>با پارچه نانو قابل شستشوی</li>
           <li>بدنه فلزی و با استقامت بالا</li>
           <li>دارای باکس ساخته شده از ام دی اف که داخلش وسایل می‌توانید بگذارید.</li>
           <li>با ۴ تا کوسن رایگان</li>
+        </ul>
+      </content>
+      <content id="02">
+        <ul class="contentize">
+          <li>...</li>
+        </ul>
+      </content>
+      <content id="03">
+        <ul class="contentize">
+          <li>...</li>
+        </ul>
+      </content>
+      <content id="04">
+        <ul class="contentize">
+          <li>...</li>
+        </ul>
+      </content>
+      <content id="05">
+        <ul class="contentize">
+          <li>...</li>
+        </ul>
+      </content>
+      <content id="06">
+        <ul class="contentize">
+          <li>...</li>
+        </ul>
+      </content>
+      <content id="07">
+        <ul class="contentize">
+          <li>...</li>
         </ul>
       </content>
     </div>
@@ -100,7 +154,7 @@
             header: '1.jpg',
             price: "2,800,000",
             title: '&nbsp;',
-            content: '#content-template content#01'
+            content: '#content-template content#02'
           },
           {
             dir: '/assets/images/03',
@@ -164,9 +218,9 @@
             modal_content.find('.row')
               .append('<img src="' + item.dir + '/' + getThumb(i.toString()) + '.jpg" class="text-center img-fluid col-5" style="cursor: pointer; margin: 20px; height: 150px" onclick="window.open(this.getAttribute(\'origin\'))" origin="' + item.dir + '/' + i.toString() + '.jpg" />')
           }
-          console.log(modal)
           modal.modal();
         });
+        $('footer').show();
       });
     </script>
     <!-- Optional JavaScript -->
